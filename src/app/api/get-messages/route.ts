@@ -62,6 +62,13 @@ export async function GET(request : Request){
             {status : 401}
         )
     } catch (error) {
-        
+        console.error("An unexpected error occured while getting the messages ",error)
+        return Response.json(
+            {
+                success : false,
+                message : "An unexpected error occured while getting the messages "
+            },
+            {status : 500}
+        )
     }
 }
